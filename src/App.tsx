@@ -13,7 +13,7 @@ export default function App() {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF7F2] text-[#292524]">
+    <div className="min-h-screen flex flex-col bg-white text-gray-800">
       {/* Semantic Header */}
       <Header />
 
@@ -31,7 +31,7 @@ export default function App() {
         {/* 3 Steps How It Works */}
         <HowItWorks />
 
-        {/* Social Proof (Corporate Testimonial reserved & marked [POR CONFIRMAR]) */}
+        {/* Social Proof & Logistics Coverage */}
         <SocialProof />
 
         {/* Primary Conversion Lead Form */}

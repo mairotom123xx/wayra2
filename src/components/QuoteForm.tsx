@@ -43,11 +43,11 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
     }
 
     if (!formData.empresa.trim()) {
-      newErrors.empresa = 'Por favor ingresa el nombre de tu empresa o agencia.';
+      newErrors.empresa = 'Por favor ingresa el nombre de tu empresa, agencia o evento.';
     }
 
     if (!formData.correo.trim()) {
-      newErrors.correo = 'Por favor ingresa tu correo electrónico corporativo.';
+      newErrors.correo = 'Por favor ingresa tu correo electrónico de contacto.';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.correo)) {
       newErrors.correo = 'Ingresa un correo electrónico válido.';
     }
@@ -64,9 +64,9 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
 
     const personasNum = parseInt(formData.personas, 10);
     if (!formData.personas) {
-      newErrors.personas = 'Indica el número de personas (10 a 40).';
-    } else if (isNaN(personasNum) || personasNum < 10 || personasNum > 40) {
-      newErrors.personas = 'El servicio está diseñado para grupos de 10 a 40 personas.';
+      newErrors.personas = 'Indica el número estimado de personas / invitados.';
+    } else if (isNaN(personasNum) || personasNum < 1) {
+      newErrors.personas = 'Indica una cantidad válida de asistentes para calcular el mobiliario.';
     }
 
     if (!formData.consentimiento) {
@@ -126,61 +126,61 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
   };
 
   return (
-    <section id="cotizacion" className="py-20 md:py-28 bg-[#F3ECE2] border-t border-[#E4D4C0]">
+    <section id="cotizacion" className="py-20 md:py-28 bg-[#F9FAFB] border-t border-gray-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#8B4D24] block mb-2">
+          <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#B3802A] block mb-2">
             Paso final
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#3A1B0B] tracking-tight mb-4">
-            Coordina el coffee break para tu evento
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4">
+            Cotiza sillas, mesas, toldos y entelado para tu evento
           </h2>
-          <p className="text-base text-[#552912]">
-            Completa tus datos y te enviaremos una propuesta formal ajustada al número de asistentes y a tu agenda en Cusco.
+          <p className="text-base text-gray-600">
+            Completa tus datos y te enviaremos una propuesta formal ajustada al número de invitados, requerimientos de mobiliario y locación en Cusco.
           </p>
         </div>
 
-        <div className="bg-[#FAF7F2] p-8 sm:p-12 rounded-2xl border border-[#E4D4C0] shadow-md">
+        <div className="bg-white p-8 sm:p-12 rounded-2xl border border-gray-200 shadow-md">
           {isSubmitted && submittedData ? (
             /* Thank you confirmation message without reloading page */
             <div className="text-center py-8 space-y-6">
-              <div className="w-16 h-16 bg-[#8B4D24]/10 text-[#8B4D24] rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-[#B3802A]/10 text-[#B3802A] rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
 
               <div className="space-y-2">
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#3A1B0B]">
-                  ¡Gracias por comunicarte con Wayra Café, {submittedData.nombre}!
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900">
+                  ¡Gracias por comunicarte con Sumaq Alquileres Cusco, {submittedData.nombre}!
                 </h3>
-                <p className="text-base text-[#552912] max-w-xl mx-auto">
-                  Hemos recibido la solicitud para <strong className="font-semibold text-[#3A1B0B]">{submittedData.empresa}</strong>. Nos comunicaremos a tu correo ({submittedData.correo}) y celular ({submittedData.celular}) con la cotización detallada.
+                <p className="text-base text-gray-600 max-w-xl mx-auto">
+                  Hemos recibido tu solicitud para <strong className="font-semibold text-gray-900">{submittedData.empresa}</strong>. Nos comunicaremos a tu correo ({submittedData.correo}) y celular ({submittedData.celular}) con la cotización detallada.
                 </p>
               </div>
 
-              <div className="bg-[#F3ECE2] p-6 rounded-xl border border-[#E4D4C0] max-w-md mx-auto text-left text-sm text-[#552912] space-y-2">
+              <div className="bg-[#F9FAFB] p-6 rounded-xl border border-gray-200 max-w-md mx-auto text-left text-sm text-gray-700 space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-[#785E4F]">Fecha tentativa:</span>
-                  <span className="font-semibold text-[#3A1B0B]">{submittedData.fecha}</span>
+                  <span className="text-gray-500">Fecha tentativa:</span>
+                  <span className="font-semibold text-gray-900">{submittedData.fecha}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#785E4F]">Grupo estimado:</span>
-                  <span className="font-semibold text-[#3A1B0B]">{submittedData.personas} personas</span>
+                  <span className="text-gray-500">Invitados estimados:</span>
+                  <span className="font-semibold text-gray-900">{submittedData.personas} personas</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#785E4F]">Servicio:</span>
-                  <span className="font-semibold text-[#3A1B0B]">Café de especialidad La Convención</span>
+                  <span className="text-gray-500">Servicios solicitados:</span>
+                  <span className="font-semibold text-gray-900">Sillas, mesas, toldos y entelado</span>
                 </div>
                 {submittedData.como_nos_conociste && (
                   <div className="flex justify-between">
-                    <span className="text-[#785E4F]">Nos conociste:</span>
-                    <span className="font-semibold text-[#3A1B0B] text-right">{submittedData.como_nos_conociste}</span>
+                    <span className="text-gray-500">Nos conociste:</span>
+                    <span className="font-semibold text-gray-900 text-right">{submittedData.como_nos_conociste}</span>
                   </div>
                 )}
                 {submittedData.mensaje && (
-                  <div className="pt-2 border-t border-[#E4D4C0]">
-                    <span className="text-[#785E4F] block mb-1">Mensaje:</span>
-                    <p className="text-xs text-[#3A1B0B] bg-white/70 p-2.5 rounded border border-[#E4D4C0] whitespace-pre-wrap">
+                  <div className="pt-2 border-t border-gray-200">
+                    <span className="text-gray-500 block mb-1">Requerimientos:</span>
+                    <p className="text-xs text-gray-900 bg-white p-2.5 rounded border border-gray-200 whitespace-pre-wrap">
                       {submittedData.mensaje}
                     </p>
                   </div>
@@ -191,7 +191,7 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="px-6 py-2.5 text-sm font-semibold text-[#8B4D24] bg-white border border-[#E4D4C0] hover:bg-[#F3ECE2] rounded-lg transition-colors cursor-pointer"
+                  className="px-6 py-2.5 text-sm font-semibold text-[#B3802A] bg-white border border-gray-300 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
                 >
                   Enviar otra solicitud
                 </button>
@@ -206,7 +206,7 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <div>
                   <label
                     htmlFor="nombre"
-                    className="block text-xs sm:text-sm font-semibold text-[#3A1B0B] mb-2"
+                    className="block text-xs sm:text-sm font-semibold text-gray-800 mb-2"
                   >
                     Nombre y apellido <span className="text-red-700">*</span>
                   </label>
@@ -218,8 +218,8 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                     onChange={handleChange}
                     placeholder="Ej. Carlos Mendoza"
                     className={`w-full px-4 py-3 text-sm bg-white rounded-lg border ${
-                      errors.nombre ? 'border-red-600 ring-1 ring-red-600' : 'border-[#E4D4C0]'
-                    } focus:border-[#8B4D24] focus:ring-2 focus:ring-[#8B4D24]/20 transition-all outline-none`}
+                      errors.nombre ? 'border-red-600 ring-1 ring-red-600' : 'border-gray-300'
+                    } focus:border-[#B3802A] focus:ring-2 focus:ring-[#B3802A]/20 transition-all outline-none`}
                     required
                   />
                   {errors.nombre && (
@@ -234,9 +234,9 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <div>
                   <label
                     htmlFor="empresa"
-                    className="block text-xs sm:text-sm font-semibold text-[#3A1B0B] mb-2"
+                    className="block text-xs sm:text-sm font-semibold text-gray-800 mb-2"
                   >
-                    Nombre de la empresa o agencia <span className="text-red-700">*</span>
+                    Empresa, agencia o nombre del evento <span className="text-red-700">*</span>
                   </label>
                   <input
                     type="text"
@@ -244,10 +244,10 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                     name="empresa"
                     value={formData.empresa}
                     onChange={handleChange}
-                    placeholder="Ej. Andina Travel Tours"
+                    placeholder="Ej. Boda Mendoza o Eventos Cusco"
                     className={`w-full px-4 py-3 text-sm bg-white rounded-lg border ${
-                      errors.empresa ? 'border-red-600 ring-1 ring-red-600' : 'border-[#E4D4C0]'
-                    } focus:border-[#8B4D24] focus:ring-2 focus:ring-[#8B4D24]/20 transition-all outline-none`}
+                      errors.empresa ? 'border-red-600 ring-1 ring-red-600' : 'border-gray-300'
+                    } focus:border-[#B3802A] focus:ring-2 focus:ring-[#B3802A]/20 transition-all outline-none`}
                     required
                   />
                   {errors.empresa && (
@@ -262,7 +262,7 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <div>
                   <label
                     htmlFor="correo"
-                    className="block text-xs sm:text-sm font-semibold text-[#3A1B0B] mb-2"
+                    className="block text-xs sm:text-sm font-semibold text-gray-800 mb-2"
                   >
                     Correo electrónico <span className="text-red-700">*</span>
                   </label>
@@ -274,8 +274,8 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                     onChange={handleChange}
                     placeholder="contacto@empresa.com"
                     className={`w-full px-4 py-3 text-sm bg-white rounded-lg border ${
-                      errors.correo ? 'border-red-600 ring-1 ring-red-600' : 'border-[#E4D4C0]'
-                    } focus:border-[#8B4D24] focus:ring-2 focus:ring-[#8B4D24]/20 transition-all outline-none`}
+                      errors.correo ? 'border-red-600 ring-1 ring-red-600' : 'border-gray-300'
+                    } focus:border-[#B3802A] focus:ring-2 focus:ring-[#B3802A]/20 transition-all outline-none`}
                     required
                   />
                   {errors.correo && (
@@ -290,7 +290,7 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <div>
                   <label
                     htmlFor="celular"
-                    className="block text-xs sm:text-sm font-semibold text-[#3A1B0B] mb-2"
+                    className="block text-xs sm:text-sm font-semibold text-gray-800 mb-2"
                   >
                     Número de celular <span className="text-red-700">*</span>
                   </label>
@@ -302,8 +302,8 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                     onChange={handleChange}
                     placeholder="+51 984 000 000"
                     className={`w-full px-4 py-3 text-sm bg-white rounded-lg border ${
-                      errors.celular ? 'border-red-600 ring-1 ring-red-600' : 'border-[#E4D4C0]'
-                    } focus:border-[#8B4D24] focus:ring-2 focus:ring-[#8B4D24]/20 transition-all outline-none`}
+                      errors.celular ? 'border-red-600 ring-1 ring-red-600' : 'border-gray-300'
+                    } focus:border-[#B3802A] focus:ring-2 focus:ring-[#B3802A]/20 transition-all outline-none`}
                     required
                   />
                   {errors.celular && (
@@ -318,7 +318,7 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <div>
                   <label
                     htmlFor="fecha"
-                    className="block text-xs sm:text-sm font-semibold text-[#3A1B0B] mb-2"
+                    className="block text-xs sm:text-sm font-semibold text-gray-800 mb-2"
                   >
                     Fecha tentativa del evento <span className="text-red-700">*</span>
                   </label>
@@ -329,8 +329,8 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                     value={formData.fecha}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 text-sm bg-white rounded-lg border ${
-                      errors.fecha ? 'border-red-600 ring-1 ring-red-600' : 'border-[#E4D4C0]'
-                    } focus:border-[#8B4D24] focus:ring-2 focus:ring-[#8B4D24]/20 transition-all outline-none`}
+                      errors.fecha ? 'border-red-600 ring-1 ring-red-600' : 'border-gray-300'
+                    } focus:border-[#B3802A] focus:ring-2 focus:ring-[#B3802A]/20 transition-all outline-none`}
                     required
                   />
                   {errors.fecha && (
@@ -341,26 +341,25 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                   )}
                 </div>
 
-                {/* 6. Número de personas (10-40) */}
+                {/* 6. Número de personas */}
                 <div>
                   <label
                     htmlFor="personas"
-                    className="block text-xs sm:text-sm font-semibold text-[#3A1B0B] mb-2"
+                    className="block text-xs sm:text-sm font-semibold text-gray-800 mb-2"
                   >
-                    Número de personas (10-40) <span className="text-red-700">*</span>
+                    Número estimado de personas / invitados <span className="text-red-700">*</span>
                   </label>
                   <input
                     type="number"
                     id="personas"
                     name="personas"
-                    min="10"
-                    max="40"
+                    min="1"
                     value={formData.personas}
                     onChange={handleChange}
-                    placeholder="Cantidad de asistentes (10 a 40)"
+                    placeholder="Cantidad de invitados (ej. 30, 80, 150...)"
                     className={`w-full px-4 py-3 text-sm bg-white rounded-lg border ${
-                      errors.personas ? 'border-red-600 ring-1 ring-red-600' : 'border-[#E4D4C0]'
-                    } focus:border-[#8B4D24] focus:ring-2 focus:ring-[#8B4D24]/20 transition-all outline-none`}
+                      errors.personas ? 'border-red-600 ring-1 ring-red-600' : 'border-gray-300'
+                    } focus:border-[#B3802A] focus:ring-2 focus:ring-[#B3802A]/20 transition-all outline-none`}
                     required
                   />
                   {errors.personas && (
@@ -375,7 +374,7 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <div className="md:col-span-2">
                   <label
                     htmlFor="como_nos_conociste"
-                    className="block text-xs sm:text-sm font-semibold text-[#3A1B0B] mb-2"
+                    className="block text-xs sm:text-sm font-semibold text-gray-800 mb-2"
                   >
                     ¿Cómo nos conociste?
                   </label>
@@ -384,14 +383,14 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                     name="como_nos_conociste"
                     value={formData.como_nos_conociste}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 text-sm bg-white rounded-lg border border-[#E4D4C0] focus:border-[#8B4D24] focus:ring-2 focus:ring-[#8B4D24]/20 transition-all outline-none cursor-pointer text-[#3A1B0B]"
+                    className="w-full px-4 py-3 text-sm bg-white rounded-lg border border-gray-300 focus:border-[#B3802A] focus:ring-2 focus:ring-[#B3802A]/20 transition-all outline-none cursor-pointer text-gray-900"
                   >
                     <option value="">Selecciona una opción (opcional)</option>
                     <option value="Recomendación de otra empresa o colega">Recomendación de otra empresa o colega</option>
                     <option value="Búsqueda en Google">Búsqueda en Google</option>
-                    <option value="Redes sociales (Instagram, LinkedIn, Facebook)">Redes sociales (Instagram, LinkedIn, Facebook)</option>
-                    <option value="Visita previa a Wayra Café en Cusco">Visita previa a Wayra Café en Cusco</option>
-                    <option value="Agencia de turismo aliada">Agencia de turismo aliada</option>
+                    <option value="Redes sociales (Instagram, Facebook, TikTok)">Redes sociales (Instagram, Facebook, TikTok)</option>
+                    <option value="Wedding Planner o Productora de eventos">Wedding Planner o Productora de eventos</option>
+                    <option value="Hotel o local aliado en Cusco">Hotel o local aliado en Cusco</option>
                     <option value="Otro medio">Otro medio</option>
                   </select>
                 </div>
@@ -400,9 +399,9 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <div className="md:col-span-2">
                   <label
                     htmlFor="mensaje"
-                    className="block text-xs sm:text-sm font-semibold text-[#3A1B0B] mb-2"
+                    className="block text-xs sm:text-sm font-semibold text-gray-800 mb-2"
                   >
-                    Mensaje o detalles del evento
+                    Detalle de sillas, mesas, toldos o entelado requerido
                   </label>
                   <textarea
                     id="mensaje"
@@ -410,8 +409,8 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                     rows={4}
                     value={formData.mensaje}
                     onChange={handleChange}
-                    placeholder="Cuéntanos si tienes alguna preferencia de horario, requerimientos dietéticos o detalles específicos de tu evento..."
-                    className="w-full px-4 py-3 text-sm bg-white rounded-lg border border-[#E4D4C0] focus:border-[#8B4D24] focus:ring-2 focus:ring-[#8B4D24]/20 transition-all outline-none resize-y"
+                    placeholder="Cuéntanos qué necesitas: cantidad de sillas (vestidas o plásticas), mesas (redondas o tablones), medidas de toldo estructural, decoración con entelado, locación en Cusco o Valle Sagrado..."
+                    className="w-full px-4 py-3 text-sm bg-white rounded-lg border border-gray-300 focus:border-[#B3802A] focus:ring-2 focus:ring-[#B3802A]/20 transition-all outline-none resize-y"
                   />
                 </div>
 
@@ -426,15 +425,15 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                     name="consentimiento"
                     checked={formData.consentimiento}
                     onChange={handleChange}
-                    className="mt-1 w-4 h-4 text-[#8B4D24] border-[#CEB496] rounded focus:ring-[#8B4D24] cursor-pointer"
+                    className="mt-1 w-4 h-4 text-[#B3802A] border-gray-300 rounded focus:ring-[#B3802A] cursor-pointer"
                     required
                   />
-                  <label htmlFor="consentimiento" className="text-xs sm:text-sm text-[#552912] leading-normal cursor-pointer">
-                    Acepto que mis datos sean utilizados exclusivamente para gestionar la cotización y coordinación de mi evento corporativo, de acuerdo con el{' '}
+                  <label htmlFor="consentimiento" className="text-xs sm:text-sm text-gray-700 leading-normal cursor-pointer">
+                    Acepto que mis datos sean utilizados exclusivamente para gestionar la cotización y coordinación de sillas, mesas, toldos y entelado para mi evento, de acuerdo con el{' '}
                     <button
                       type="button"
                       onClick={onOpenPrivacyModal}
-                      className="text-[#8B4D24] font-semibold underline hover:text-[#6F3918] cursor-pointer"
+                      className="text-[#B3802A] font-semibold underline hover:text-[#93641B] cursor-pointer"
                     >
                       aviso de privacidad
                     </button>
@@ -454,13 +453,13 @@ export const QuoteForm: React.FC<{ onOpenPrivacyModal: () => void }> = ({ onOpen
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 px-8 text-base font-semibold text-white bg-[#8B4D24] hover:bg-[#6F3918] active:bg-[#552912] disabled:opacity-75 disabled:cursor-not-allowed rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8B4D24]"
+                  className="w-full py-4 px-8 text-base font-semibold text-white bg-[#B3802A] hover:bg-[#93641B] active:bg-[#744E17] disabled:opacity-75 disabled:cursor-not-allowed rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#B3802A]"
                 >
                   <span>{isSubmitting ? 'Enviando solicitud...' : 'Solicitar cotización para mi evento'}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
-                <p className="text-xs text-center text-[#785E4F] mt-3">
-                  Sin compromiso. Coordinamos contigo la propuesta exacta para tu grupo en Cusco.
+                <p className="text-xs text-center text-gray-500 mt-3">
+                  Sin compromiso. Cotización detallada con puntualidad, limpieza y montaje seguro en Cusco.
                 </p>
               </div>
 

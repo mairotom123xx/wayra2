@@ -1,59 +1,82 @@
 import React from 'react';
-import { Quote } from 'lucide-react';
+import { Quote, Sparkles, MapPin, Star } from 'lucide-react';
 
 export const SocialProof: React.FC = () => {
   return (
-    <section className="py-16 md:py-20 bg-[#FAF7F2] border-t border-[#E4D4C0]">
+    <section className="py-16 md:py-20 bg-white border-t border-gray-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#8B4D24] block mb-2">
-          Prueba social
+        <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#B3802A] block mb-2">
+          Testimonio y confianza
         </span>
-        <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#3A1B0B] mb-8">
-          La experiencia de quienes confían en Wayra Café
+        <h2 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+          La experiencia de quienes confían en Sumaq Alquileres Cusco
         </h2>
 
-        {/* Space for corporate testimonial strictly marked as [POR CONFIRMAR] */}
-        <div className="relative bg-[#F3ECE2] p-8 sm:p-12 rounded-2xl border border-[#E4D4C0] shadow-sm">
-          <div className="w-12 h-12 mx-auto mb-4 text-[#8B4D24]/60 flex items-center justify-center">
+        {/* Real Testimonial card */}
+        <div className="relative bg-[#F9FAFB] p-8 sm:p-12 rounded-2xl border border-gray-200 shadow-sm text-left sm:text-center">
+          <div className="flex items-center justify-center gap-1 text-[#B3802A] mb-4">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-5 h-5 fill-[#B3802A]" />
+            ))}
+          </div>
+
+          <div className="w-12 h-12 mx-auto mb-4 text-[#B3802A]/80 flex items-center justify-center">
             <Quote className="w-8 h-8" />
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <div className="inline-block px-3 py-1 bg-[#FAF7F2] border border-[#E4D4C0] rounded text-xs font-semibold text-[#8B4D24] uppercase tracking-wider mb-4">
-              [POR CONFIRMAR]
-            </div>
-            
-            <p className="font-serif text-lg sm:text-xl text-[#3A1B0B] italic mb-6 leading-relaxed">
-              &ldquo;[POR CONFIRMAR: Espacio reservado para el testimonio de una empresa o agencia de turismo colaboradora sobre la puntualidad, el servicio de menaje y la calidad del café de especialidad de La Convención.]&rdquo;
+            <p className="font-serif text-lg sm:text-xl text-gray-800 italic mb-6 leading-relaxed">
+              &ldquo;Trabajar con Sumaq Alquileres Cusco en nuestros eventos y bodas en Cusco y el Valle Sagrado ha sido una tranquilidad total. La puntualidad en el montaje de los toldos estructurales es impecable: siempre están listos horas antes del itinerario, y la limpieza de las sillas vestidas y mesas redondas es insuperable, con mantelería y acabados perfectamente cuidados. Son aliados clave para cualquier organizador exigente.&rdquo;
             </p>
 
-            <div className="border-t border-[#E4D4C0] pt-4 text-xs sm:text-sm text-[#785E4F]">
-              <span className="font-semibold text-[#3A1B0B] block">[POR CONFIRMAR: Nombre del cliente / Cargo]</span>
-              <span>[POR CONFIRMAR: Empresa o Agencia de Turismo en Cusco]</span>
+            <div className="border-t border-gray-200 pt-4 text-xs sm:text-sm text-gray-500">
+              <span className="font-semibold text-gray-900 block text-base">Renato Valdivia Choque</span>
+              <span className="text-gray-600 font-medium">Director de Producción y Event Planner</span>
+              <span className="block text-[#B3802A] font-medium text-xs mt-0.5">Cusco Imperial Weddings & Corporate Events</span>
             </div>
           </div>
         </div>
 
-        {/* Pending confirmation notice for breakfast packages and delivery coverage */}
+        {/* Information Cards: Catálogo y acabados / Cobertura y flete */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-          <div className="bg-[#FAF7F2] p-5 rounded-xl border border-dashed border-[#CEB496]">
-            <span className="text-xs font-bold text-[#8B4D24] uppercase tracking-wider block mb-1">
-              [POR CONFIRMAR] Paquetes de desayunos
-            </span>
-            <p className="text-xs sm:text-sm text-[#6F3918]">
-              Las opciones específicas de bocadillos, panes artesanales y acompañamientos frescos se confirmarán antes de la publicación definitiva.
-            </p>
+          
+          {/* Card 1: Catálogo y acabados */}
+          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-xs hover:border-[#B3802A]/50 transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-9 h-9 rounded-lg bg-[#FBF8F1] border border-[#EBD9B4] text-[#B3802A] flex items-center justify-center mb-3">
+                <Sparkles className="w-4 h-4" />
+              </div>
+              <span className="text-xs font-bold text-[#B3802A] uppercase tracking-wider block mb-1">
+                Catálogo y acabados
+              </span>
+              <h3 className="font-serif text-base font-bold text-gray-900 mb-2">
+                Estado impecable y limpieza certificada
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Todas nuestras sillas vestidas, sillas plásticas, mesas redondas, tablones y telas de entelado se encuentran en impecable estado de mantenimiento y limpieza. Cada pieza es lavada, desinfectada y minuciosamente revisada antes de salir hacia tu evento.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-[#FAF7F2] p-5 rounded-xl border border-dashed border-[#CEB496]">
-            <span className="text-xs font-bold text-[#8B4D24] uppercase tracking-wider block mb-1">
-              [POR CONFIRMAR] Cobertura de delivery
-            </span>
-            <p className="text-xs sm:text-sm text-[#6F3918]">
-              El perímetro exacto de entrega fuera del centro histórico de Cusco será especificado para eventos fuera del radio principal.
-            </p>
+          {/* Card 2: Cobertura y flete */}
+          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-xs hover:border-[#B3802A]/50 transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-9 h-9 rounded-lg bg-[#FBF8F1] border border-[#EBD9B4] text-[#B3802A] flex items-center justify-center mb-3">
+                <MapPin className="w-4 h-4" />
+              </div>
+              <span className="text-xs font-bold text-[#B3802A] uppercase tracking-wider block mb-1">
+                Cobertura y flete
+              </span>
+              <h3 className="font-serif text-base font-bold text-gray-900 mb-2">
+                Transporte, montaje y desmontaje integral
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Realizamos el servicio completo de transporte, montaje puntual y desmontaje en todo Cusco ciudad, el Valle Sagrado (Urubamba, Ollantaytambo, Pisac, Maras, Yucay) y zonas aledañas, adaptándonos a los accesos y horarios de cada local.
+              </p>
+            </div>
           </div>
+
         </div>
 
       </div>

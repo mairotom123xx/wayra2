@@ -13,42 +13,42 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E4D4C0]/70 transition-colors">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Zone 1: Brand Wordmark (Single text element in display face) */}
+          {/* Zone 1: Brand Wordmark */}
           <a
             href="#"
-            className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#3A1B0B] hover:text-[#6F3918] transition-colors focus-visible:ring-2 focus-visible:ring-[#8B4D24] rounded-sm"
+            className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 hover:text-[#B3802A] transition-colors focus-visible:ring-2 focus-visible:ring-[#B3802A] rounded-sm"
           >
-            Wayra Café
+            Sumaq Alquileres Cusco
           </a>
 
           {/* Zone 2: Navigation links */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#552912]">
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
             <button
               onClick={() => scrollToSection('propuesta')}
-              className="hover:text-[#8B4D24] transition-colors cursor-pointer py-1"
+              className="hover:text-[#B3802A] transition-colors cursor-pointer py-1"
             >
-              Propuesta
+              Servicios
             </button>
             <button
               onClick={() => scrollToSection('beneficios')}
-              className="hover:text-[#8B4D24] transition-colors cursor-pointer py-1"
+              className="hover:text-[#B3802A] transition-colors cursor-pointer py-1"
             >
               Beneficios
             </button>
             <button
               onClick={() => scrollToSection('como-funciona')}
-              className="hover:text-[#8B4D24] transition-colors cursor-pointer py-1"
+              className="hover:text-[#B3802A] transition-colors cursor-pointer py-1"
             >
               Cómo funciona
             </button>
             <button
               onClick={() => scrollToSection('cotizacion')}
-              className="hover:text-[#8B4D24] transition-colors cursor-pointer py-1"
+              className="hover:text-[#B3802A] transition-colors cursor-pointer py-1"
             >
-              Contacto
+              Cotización
             </button>
           </nav>
 
@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
           <div className="hidden sm:flex items-center">
             <button
               onClick={() => scrollToSection('cotizacion')}
-              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#8B4D24] hover:bg-[#6F3918] active:bg-[#552912] rounded-lg shadow-sm transition-all duration-150 whitespace-nowrap cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8B4D24]"
+              className="px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#B3802A] hover:bg-[#93641B] active:bg-[#744E17] rounded-lg shadow-sm transition-all duration-150 whitespace-nowrap cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#B3802A]"
             >
               Solicitar cotización para mi evento
             </button>
@@ -67,7 +67,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#552912] hover:text-[#3A1B0B] focus-visible:ring-2 focus-visible:ring-[#8B4D24] rounded-lg"
+              className="p-2 text-gray-700 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-[#B3802A] rounded-lg"
               aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -78,37 +78,37 @@ export const Header: React.FC = () => {
 
       {/* Mobile menu dropdown */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-b border-[#E4D4C0] bg-[#FAF7F2] px-4 pt-3 pb-6 space-y-3">
-          <nav className="flex flex-col space-y-3 text-base font-medium text-[#552912]">
+        <div className="sm:hidden border-b border-gray-200 bg-white px-4 pt-3 pb-6 space-y-3">
+          <nav className="flex flex-col space-y-3 text-base font-medium text-gray-700">
             <button
               onClick={() => scrollToSection('propuesta')}
-              className="text-left py-2 hover:text-[#8B4D24]"
+              className="text-left py-2 hover:text-[#B3802A]"
             >
-              Propuesta
+              Servicios
             </button>
             <button
               onClick={() => scrollToSection('beneficios')}
-              className="text-left py-2 hover:text-[#8B4D24]"
+              className="text-left py-2 hover:text-[#B3802A]"
             >
               Beneficios
             </button>
             <button
               onClick={() => scrollToSection('como-funciona')}
-              className="text-left py-2 hover:text-[#8B4D24]"
+              className="text-left py-2 hover:text-[#B3802A]"
             >
               Cómo funciona
             </button>
             <button
               onClick={() => scrollToSection('cotizacion')}
-              className="text-left py-2 hover:text-[#8B4D24]"
+              className="text-left py-2 hover:text-[#B3802A]"
             >
-              Contacto
+              Cotización
             </button>
           </nav>
           <div className="pt-2">
             <button
               onClick={() => scrollToSection('cotizacion')}
-              className="w-full py-3 px-4 text-center text-sm font-semibold text-white bg-[#8B4D24] hover:bg-[#6F3918] rounded-lg shadow-sm transition-colors whitespace-nowrap cursor-pointer"
+              className="w-full py-3 px-4 text-center text-sm font-semibold text-white bg-[#B3802A] hover:bg-[#93641B] rounded-lg shadow-sm"
             >
               Solicitar cotización para mi evento
             </button>

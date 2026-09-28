@@ -3,46 +3,46 @@ import { IMAGES } from '../assets/images';
 
 export const Benefits: React.FC = () => {
   return (
-    <section id="beneficios" className="py-20 md:py-28 bg-[#FAF7F2]">
+    <section id="beneficios" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section title */}
         <div className="max-w-3xl mb-16">
-          <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#8B4D24] block mb-2">
-            Lo que gana tu evento
+          <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#B3802A] block mb-2">
+            Nuestros compromisos fundamentales
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#3A1B0B] tracking-tight mb-4">
-            Tres razones concretas para confiar en Wayra Café
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-4">
+            Tres razones para confiar en Sumaq Alquileres Cusco
           </h2>
-          <p className="text-base sm:text-lg text-[#552912]">
-            Cada detalle está pensado para transmitir profesionalismo a tus clientes, socios y colaboradores.
+          <p className="text-base sm:text-lg text-gray-600">
+            Puntualidad, limpieza y calidad asegurada en sillas, mesas, toldos estructurales y entelado para que disfrutes de tu evento sin preocupaciones.
           </p>
         </div>
 
         {/* The 3 concrete benefits paired with visuals */}
         <div className="space-y-16 lg:space-y-24">
           
-          {/* Benefit 1 */}
+          {/* Benefit 1: Limpieza e imagen impecable */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 order-2 lg:order-1">
-              <span className="text-xs sm:text-sm font-bold text-[#8B4D24] uppercase tracking-wider mb-2 block">
-                01. Identidad y calidad superior
+              <span className="text-xs sm:text-sm font-bold text-[#B3802A] uppercase tracking-wider mb-2 block">
+                01. Limpieza rigurosa
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#3A1B0B] mb-4">
-                Café de origen con historia
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Mobiliario y telas 100% limpios y cuidados
               </h3>
-              <p className="text-base sm:text-lg text-[#552912] leading-relaxed mb-6">
-                Servimos café de especialidad de productores de La Convención, con trazabilidad garantizada en cada taza. Tus asistentes degustarán un café de altura con notas sensoriales auténticas, convirtiendo una pausa rutinaria en una experiencia memorable.
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+                Cada silla vestida, silla plástica, mesa y tela de entelado es inspeccionada, lavada y desinfectada minuciosamente antes de cada entrega. Te garantizamos fundas blancas impecables, superficies de mesas sin manchas y telas planchadas listas para lucir en tu celebración.
               </p>
-              <div className="p-4 bg-[#F3ECE2] border-l-4 border-[#8B4D24] rounded-r-lg text-xs sm:text-sm text-[#552912]">
-                <strong className="font-semibold text-[#3A1B0B]">El beneficio para tu empresa:</strong> Diferénciate con un catering con relato y orgullo cusqueño que deja una impresión duradera en tus clientes y aliados.
+              <div className="p-4 bg-gray-50 border-l-4 border-[#B3802A] rounded-r-lg text-xs sm:text-sm text-gray-700">
+                <strong className="font-semibold text-gray-900">El beneficio para tu evento:</strong> Espacios pulcros y elegantes que transmiten respeto y distinción a tus invitados desde el primer instante.
               </div>
             </div>
             <div className="lg:col-span-6 order-1 lg:order-2">
-              <div className="rounded-xl overflow-hidden border border-[#E4D4C0] shadow-md bg-[#F3ECE2]">
+              <div className="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
                 <img
-                  src={IMAGES.beansOrigin.src}
-                  alt={IMAGES.beansOrigin.alt}
+                  src={IMAGES.sillasYMesas.src}
+                  alt={IMAGES.sillasYMesas.alt}
                   referrerPolicy="no-referrer"
                   className="w-full h-[280px] sm:h-[360px] object-cover hover:scale-[1.02] transition-transform duration-300"
                   loading="lazy"
@@ -51,13 +51,13 @@ export const Benefits: React.FC = () => {
             </div>
           </div>
 
-          {/* Benefit 2 */}
+          {/* Benefit 2: Calidad y resistencia estructural */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 order-1">
-              <div className="rounded-xl overflow-hidden border border-[#E4D4C0] shadow-md bg-[#F3ECE2]">
+              <div className="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
                 <img
-                  src={IMAGES.corporateEvent.src}
-                  alt={IMAGES.corporateEvent.alt}
+                  src={IMAGES.toldosEstructurales.src}
+                  alt={IMAGES.toldosEstructurales.alt}
                   referrerPolicy="no-referrer"
                   className="w-full h-[280px] sm:h-[360px] object-cover hover:scale-[1.02] transition-transform duration-300"
                   loading="lazy"
@@ -65,42 +65,42 @@ export const Benefits: React.FC = () => {
               </div>
             </div>
             <div className="lg:col-span-6 order-2">
-              <span className="text-xs sm:text-sm font-bold text-[#8B4D24] uppercase tracking-wider mb-2 block">
-                02. Tranquilidad para tu equipo
+              <span className="text-xs sm:text-sm font-bold text-[#B3802A] uppercase tracking-wider mb-2 block">
+                02. Calidad estructural
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#3A1B0B] mb-4">
-                Logística impecable
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Toldos estructurales seguros y mobiliario resistente
               </h3>
-              <p className="text-base sm:text-lg text-[#552912] leading-relaxed mb-6">
-                Olvídate de los imprevistos; entregamos todo el menaje necesario y cumplimos estrictamente con el horario de tu agenda. Todo llega listo, con presentación ordenada y limpia, sin retrasar tus sesiones de capacitación o negociaciones.
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+                Nuestros toldos cuentan con estructuras metálicas firmes y lonas impermeables de primera línea, diseñadas para brindar máxima protección contra la lluvia, el sol y las corrientes de aire en Cusco. Las mesas y sillas ofrecen firmeza y estabilidad en todo momento.
               </p>
-              <div className="p-4 bg-[#F3ECE2] border-l-4 border-[#8B4D24] rounded-r-lg text-xs sm:text-sm text-[#552912]">
-                <strong className="font-semibold text-[#3A1B0B]">El beneficio para tu empresa:</strong> Cero estrés de coordinación operativa. Tu agenda se ejecuta a tiempo y con menaje completo incluido.
+              <div className="p-4 bg-gray-50 border-l-4 border-[#B3802A] rounded-r-lg text-xs sm:text-sm text-gray-700">
+                <strong className="font-semibold text-gray-900">El beneficio para tu evento:</strong> Seguridad y confort total en cualquier local campestre, jardín o espacio abierto de la región.
               </div>
             </div>
           </div>
 
-          {/* Benefit 3 */}
+          {/* Benefit 3: Puntualidad estricta */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 order-2 lg:order-1">
-              <span className="text-xs sm:text-sm font-bold text-[#8B4D24] uppercase tracking-wider mb-2 block">
-                03. Respuesta y cercanía inmediata
+              <span className="text-xs sm:text-sm font-bold text-[#B3802A] uppercase tracking-wider mb-2 block">
+                03. Puntualidad en Cusco
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#3A1B0B] mb-4">
-                A pasos de la Plaza de Armas
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Montaje completado con horas de anticipación
               </h3>
-              <p className="text-base sm:text-lg text-[#552912] leading-relaxed mb-6">
-                Ubicación estratégica en el corazón de Cusco, facilitando la coordinación y entrega rápida para tu equipo o invitados. Estar cerca significa menor tiempo de traslado y máxima frescura en cada entrega.
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+                Sabemos que el horario de tu evento no puede esperar. Trasladamos las sillas, mesas y toldos con puntualidad rigurosa, realizamos el entelado con maestría y dejamos todo listo mucho antes del inicio. Al terminar, retiramos el material de forma ordenada.
               </p>
-              <div className="p-4 bg-[#F3ECE2] border-l-4 border-[#8B4D24] rounded-r-lg text-xs sm:text-sm text-[#552912]">
-                <strong className="font-semibold text-[#3A1B0B]">El beneficio para tu empresa:</strong> Máxima agilidad para eventos en hoteles, salas de directorio y locales del centro histórico de Cusco.
+              <div className="p-4 bg-gray-50 border-l-4 border-[#B3802A] rounded-r-lg text-xs sm:text-sm text-gray-700">
+                <strong className="font-semibold text-gray-900">El beneficio para tu evento:</strong> Cero estrés de coordinación operativa. Tu agenda transcurre en calma con cada detalle en su lugar.
               </div>
             </div>
             <div className="lg:col-span-6 order-1 lg:order-2">
-              <div className="rounded-xl overflow-hidden border border-[#E4D4C0] shadow-md bg-[#F3ECE2]">
+              <div className="rounded-xl overflow-hidden border border-gray-200 shadow-md bg-gray-100">
                 <img
-                  src={IMAGES.cuscoLocation.src}
-                  alt={IMAGES.cuscoLocation.alt}
+                  src={IMAGES.decoracionEntelado.src}
+                  alt={IMAGES.decoracionEntelado.alt}
                   referrerPolicy="no-referrer"
                   className="w-full h-[280px] sm:h-[360px] object-cover hover:scale-[1.02] transition-transform duration-300"
                   loading="lazy"

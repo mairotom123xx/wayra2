@@ -1,6 +1,6 @@
 {
-  "name": "Wayra Café — Coffee Break Corporativo en Cusco",
-  "description": "Haz que tus reuniones en Cusco destaquen con café de especialidad de La Convención, desayunos frescos y logística puntual para eventos corporativos.",
+  "name": "Sumaq Alquileres Cusco — Alquiler de Sillas, Mesas y Toldos",
+  "description": "Alquiler de sillas vestidas y plásticas, mesas redondas y tablones, instalación de toldos estructurales y decoración con entelado en Cusco. Puntualidad, limpieza y calidad garantizada.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
