@@ -1,0 +1,6 @@
+{
+  "name": "Wayra Café — Coffee Break Corporativo en Cusco",
+  "description": "Haz que tus reuniones en Cusco destaquen con café de especialidad de La Convención, desayunos frescos y logística puntual para eventos corporativos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

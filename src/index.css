@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-coffee-50: #FAF7F2;
+  --color-coffee-100: #F3ECE2;
+  --color-coffee-200: #E4D4C0;
+  --color-coffee-300: #CEB496;
+  --color-coffee-600: #8B4D24;
+  --color-coffee-700: #6F3918;
+  --color-coffee-800: #552912;
+  --color-coffee-900: #3A1B0B;
+  --color-coffee-950: #220F06;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF7F2;
+  color: #292524;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Accessible visible focus ring */
+*:focus-visible {
+  outline: 2px solid #8B4D24;
+  outline-offset: 2px;
+}
