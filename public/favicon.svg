@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#3A1B0B"/>
+  <path d="M16 28h24v12a10 10 0 0 1-10 10h-4a10 10 0 0 1-10-10V28z" fill="#FAF7F2"/>
+  <path d="M40 32h5a5 5 0 0 1 0 10h-5v-10z" stroke="#FAF7F2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Steam lines (Wayra breeze) -->
+  <path d="M22 22c0-4 4-4 4-8" stroke="#D4A373" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 22c0-4 4-4 4-8" stroke="#8B4D24" stroke-width="3" stroke-linecap="round"/>
+  <path d="M38 22c0-4 4-4 4-8" stroke="#D4A373" stroke-width="3" stroke-linecap="round"/>
+  <!-- Base saucer line -->
+  <line x1="14" y1="53" x2="42" y2="53" stroke="#8B4D24" stroke-width="3" stroke-linecap="round"/>
+</svg>
